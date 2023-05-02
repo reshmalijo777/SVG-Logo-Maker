@@ -3,7 +3,6 @@ const fs= require('fs');
 const setShape= require('./lib/setShape.js');
 const fileName= "./examples/logo.svg";
 
-
 const questions=[
     {
         type:'list',
@@ -16,23 +15,45 @@ const questions=[
         type:'list',
         message:'what is the color of your shape?',
         name:'shapeColor',
-        choices:['red','blue','green','orange'],
+        choices:['Blue ', 'Green', 'Red', 'Orange', 'Violet', 'Indigo', 'Yellow'],
 
-        validate:(answer)=>{
-            for(var i=0, length=shapeColor.length; i<length;i++){
-                if(answer.indexOf(shapeColor[i])!=-1){
+        validate:(answers)=>{
+            for(var i=0, length= shapeColor.length; i<length;i++){
+                if(answers.indexOf(shapeColor[i])!=-1){
                     return true;
-                }
-               }
+                }}
+
                return console.log("Enter a valid color")
-        }
-    },
+            }
+        },
+        
     
     {
-        type:'input',
-        message:'What text to print(3 letters maximum) on logo?',
-        name:'text',
+        type:'list',
+        message:'what is the color of text charecter?',
+        name:'textColor',
+        choices:['white','black'],
 
+        validate:(answers)=>{
+            for(var i=0, length= textColor.length; i<length;i++){
+                if(answers.indexOf(textColor[i])!=-1){
+                    return true;
+                }}
+
+               return console.log("Enter a valid color")
+            }
+        
+    },
+    {
+        type:'input',
+        message:'What text to print on logo?(minimum 3 letters)',
+        name:'text',
+        validate:(answers)=>{
+            if(answers.length>3){
+                console.log("Enter minimum 3 charecters to print text!!!")
+            }
+           return true;
+        }
     },
 
 ];
