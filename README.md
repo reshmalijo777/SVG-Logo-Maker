@@ -4,6 +4,9 @@
 
 This is a SVG logo maker that allows user to make choice of shape (circle, square,triangle) with choice of colors and a text with 3 charecter with a text color of choice.
 
+* [Video-Demo] 
+
+
 ## Table Of Contents
 
   * [Usage](#usage)

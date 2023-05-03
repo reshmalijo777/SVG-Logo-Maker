@@ -32,27 +32,25 @@ const questions=[
         type:'list',
         message:'what is the color of text charecter?',
         name:'textColor',
-        choices:['white','black'],
+        choices:['white','black','aqua'],
 
         validate:(answers)=>{
             for(var i=0, length= textColor.length; i<length;i++){
                 if(answers.indexOf(textColor[i])!=-1){
                     return true;
                 }}
-
-               return console.log("Enter a valid color")
-            }
-        
+                
+        }
     },
     {
         type:'input',
-        message:'What text to print on logo?(minimum 3 letters)',
+        message:'Enter the text to print on logo(maximum 3 charecters)',
         name:'text',
-        validate:(answers)=>{
-            if(answers.length>3){
-                console.log("Enter minimum 3 charecters to print text!!!")
+        validate:(answer) => {
+            if(answer.length>3){
+              return console.log("\n Enter 3 charecter or less to print text!!!")
             }
-           return true;
+            return true;
         }
     },
 
