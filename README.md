@@ -16,7 +16,7 @@ This is a SVG logo maker that allows user to make choice of shape (circle, squar
   * [Questions](#Questions)
 
 ## Usage
-```md
+```
 GIVEN a command-line application that accepts user input
 WHEN I am prompted for text
 THEN I can enter up to three characters
